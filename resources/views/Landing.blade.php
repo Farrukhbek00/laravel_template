@@ -73,7 +73,7 @@
         <div class="section swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="5000" data-simulate-touch="false">
           <div class="swiper-wrapper text-center">
         @foreach ($carouselImages as $carousel)
-            <div class="swiper-slide context-dark" data-slide-bg="images/page-1_slide03.jpg" >
+            <div class="swiper-slide context-dark" data-slide-bg="{{ asset('storage/'. $carousel->image) }}" >
               <div class="swiper-slide-caption section-md">
                 <div class="container">
                   <div class="row row-fix justify-content-center">

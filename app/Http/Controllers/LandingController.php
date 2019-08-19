@@ -11,9 +11,8 @@ use App;
 use App\Gallery;
 class LandingController extends Controller
 {
-    public function index($locale) {
-        App::setlocale($locale);
-        session() -> put('locale', $locale);
+    public function index() {
+        
         $blogs = Post::all();
         $carouselImages = Carousel::all();
         $body = Body::all();

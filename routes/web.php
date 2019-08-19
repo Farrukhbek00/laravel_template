@@ -19,9 +19,7 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 $locale = App::getLocale();
-Route::get('/{lang?}', 'LandingController@index', function($locale)  {
-    App::setLocale($locale);
-});
+Route::get('/', 'LandingController@index');
 Route::post('/commit', 'LandingController@store');
 Route::get('/news/{id}', 'LandingController@show');
 Route::group(['prefix' => 'admin'], function () {
