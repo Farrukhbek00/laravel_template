@@ -1,7 +1,17 @@
 @charset "UTF-8";
+html {
+	scroll-behavior: smooth;
+  }
 /*==========================================================
                         NORMALIZE
 ==========================================================*/
+@font-face {
+	font-family: 'myFont';
+	src: url('../fonts/BrannbollFet.ttf')
+}
+/* *{
+	font-family: 'myFont' !important;
+} */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -315,7 +325,8 @@ a[href^="callto:"] {
 
 img {
 	max-width: 100%;
-	height: auto;
+	/* height: auto; */
+	min-height: 100%;
 }
 
 hr {
@@ -495,8 +506,6 @@ hr {
 	max-height: 67px;
 	width: auto;
 	max-width: none;
-	width: 100px;
-	min-height: 100px;
 }
 
 /*==================     Video     ======================*/
@@ -768,11 +777,6 @@ a.icon:hover {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
-	height: 100%;
-}
-
-.post img {
-	min-height: 100%;
 }
 
 .post_cnt {
@@ -1083,7 +1087,6 @@ header .nav {
 
 .bg-aside-left .cnt-block {
 	margin-left: 50%;
-	background: url('../images/babyisland.png');
 }
 
 .bg-aside-left .cnt-block:before {
@@ -1099,8 +1102,6 @@ header .nav {
 
 .bg-aside-right .cnt-block {
 	margin-right: 50%;
-	background: url('../images/babyisland.png');
-
 }
 
 .bg-aside-right .cnt-block:before {
@@ -5393,8 +5394,7 @@ textarea.form-input {
 .rd-navbar-static .rd-navbar-dropdown {
 	position: absolute;
 	left: 0;
-	width: 270px;
-	padding: 15px;
+	padding: 10px;
 	background: #ffffff;
 	z-index: 5;
 }
@@ -5435,9 +5435,7 @@ textarea.form-input {
 .rd-navbar-static .rd-navbar-dropdown li > a,
 .rd-navbar-static .rd-megamenu-list li > a {
 	position: relative;
-	left: -3px;
 	display: flex;
-	padding: 1px 14px 1px 0;
 	text-align: left;
 	text-transform: uppercase;
 	font-size: 0.16rem;
@@ -5460,9 +5458,10 @@ textarea.form-input {
 .rd-navbar-static .rd-megamenu-list li > a,
 .rd-navbar-static .rd-megamenu-list li > a::before {
 	transition: .15s ease-in-out;
+	cursor: pointer;
 }
 
-.rd-navbar-static .rd-navbar-dropdown li > a::before,
+/* .rd-navbar-static .rd-navbar-dropdown li > a::before,
 .rd-navbar-static .rd-megamenu-list li > a::before {
 	position: relative;
 	top: -1px;
@@ -5475,9 +5474,9 @@ textarea.form-input {
 	color: #f14d4d;
 	opacity: 0;
 	visibility: hidden;
-}
+} */
 
-.rd-navbar-static .rd-navbar-dropdown li.focus > a,
+/* .rd-navbar-static .rd-navbar-dropdown li.focus > a,
 .rd-navbar-static .rd-navbar-dropdown li.opened > a,
 .rd-navbar-static .rd-navbar-dropdown li > a:hover,
 .rd-navbar-static .rd-megamenu-list li.focus > a,
@@ -5486,7 +5485,7 @@ textarea.form-input {
 	left: 0;
 	padding-left: 14px;
 	padding-right: 0;
-}
+} */
 
 .rd-navbar-static .rd-navbar-dropdown li.focus > a::before,
 .rd-navbar-static .rd-navbar-dropdown li.opened > a::before,
@@ -6323,6 +6322,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-transparent.rd-navbar-static .rd-nav-link {
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .rd-navbar-transparent.rd-navbar-static .rd-nav-link:hover {
@@ -6336,7 +6336,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-transparent.rd-navbar-static.rd-navbar--is-stuck, .rd-navbar-transparent.rd-navbar-static.rd-navbar--is-clone {
 	border-bottom-color: #d7d7d7;
-	background: #31383a;
+	background: #49a7bc;
 }
 
 .rd-navbar-transparent.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-aside-outer, .rd-navbar-transparent.rd-navbar-static.rd-navbar--is-clone .rd-navbar-aside-outer {
@@ -6760,4 +6760,67 @@ html.rd-navbar-fixed-linked .page {
 		min-height: 100vh;
 		padding: 80px 0;
 	}
+}
+
+.price {
+	display: flex;
+	padding: 40 0px;
+}
+
+.cardPrice {
+	padding: 50px 0;
+	width: 40%;
+	background: url('../images/sarv.png') !important;
+	background-size: 100% 100% !important;
+	margin: 70px auto;
+}
+
+.imgg {
+	width: 35%;
+	margin: 0 auto;
+}
+
+.text {
+	margin: 10% 0;
+}
+
+.text h3 {
+	font-family: 'myFont';
+}
+
+.text ul {
+	margin: 20px 0;
+}
+.text ul li {
+	text-align: start;
+	padding: 0 15%;
+	font-family: 'myFont';
+}
+
+
+@media (max-width: 992px) {
+	.cardPrice {
+		width: 45%;
+		padding: 65px 0;
+	}
+	.text ul li {
+		padding: 0 10%;
+	}
+}
+@media (max-width: 768px) {
+	.price {
+		display: block;
+	}
+	.cardPrice {
+		width: 100%;
+	}
+}
+
+iframe {
+	width: 100%;
+}
+
+.brand {
+	width: 100px;
+	height: 100px;
 }

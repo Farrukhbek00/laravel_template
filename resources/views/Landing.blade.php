@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <title>Home</title>
     <meta charset="utf-8">
@@ -42,62 +42,23 @@
                   <div class="rd-navbar-main-element">
                     <div class="rd-navbar-nav-wrap">
                       <!-- RD Navbar Nav-->
+                      @php $locale = session()->get('locale'); @endphp
                       <ul class="rd-navbar-nav">
-                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#map">Home</a>
                         </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="#price">About us</a>
                         </li>
                         <li class="rd-nav-item"><a class="rd-nav-link" href="news.html">News</a>
-                          <!-- RD Navbar Dropdown-->
-                          <ul class="rd-menu rd-navbar-dropdown">
-                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="blog-post.html">Blog post</a></li>
-                          </ul>
                         </li>
                         <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
-                          <!-- RD Navbar Dropdown-->
-                          <ul class="rd-menu rd-navbar-dropdown">
-                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="gallery.html">Gallery</a></li>
-                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="404.html">404</a></li>
-                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="privacy-policy.html">Privacy policy</a></li>
-                          </ul>
                         </li>
+                        
                         <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact us</a>
                         </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="#">Blocks</a>
-                          <!-- RD Navbar Megamenu-->
-                          <ul class="rd-menu rd-navbar-megamenu">
-                            <li class="rd-megamenu-item">
-                              <h6 class="rd-megamenu-title">Blocks 1</h6>
-                              <ul class="rd-megamenu-list">
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="headers.html">Headers</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="footers.html">Footers</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="blog-page.html">Blog page</a></li>
-                              </ul>
-                            </li>
-                            <li class="rd-megamenu-item">
-                              <h6 class="rd-megamenu-title">Blocks 2</h6>
-                              <ul class="rd-megamenu-list">
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="maps.html">Maps</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="forms.html">Forms</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="newsletter.html">Newsletter</a></li>
-                              </ul>
-                            </li>
-                            <li class="rd-megamenu-item">
-                              <h6 class="rd-megamenu-title">Blocks 3</h6>
-                              <ul class="rd-megamenu-list">
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="call-to-action.html">Call to action</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="gallery-page.html">Gallery page</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="gallery-album.html">Gallery album</a></li>
-                              </ul>
-                            </li>
-                            <li class="rd-megamenu-item">
-                              <h6 class="rd-megamenu-title">Blocks</h6>
-                              <ul class="rd-megamenu-list">
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="sliders.html">Sliders</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="team.html">Team</a></li>
-                                <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="testimonials.html">Testimonials</a></li>
-                              </ul>
-                            </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" style="font-size:14px" href="/ru">RU</a>
+                          <!-- RD Navbar Dropdown-->
+                          <ul class="rd-menu rd-navbar-dropdown">
+                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" style="font-size:14px">EN</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -108,42 +69,6 @@
             </nav>
           </div>
         </header>
-        <!--header.section.page-header
-        #stuck_container.stuck_container
-          h1.brand
-            a(href='./') Happy kids
-          nav.nav
-            ul.sf-menu(data-type='navbar')
-              li.active
-                a(href='./') Home
-              li
-                a(href='index-1.html') About us
-                ul
-                  li
-                    a(href='#') Lorem ipsum dolor
-                  li
-                    a(href='#') Conse ctetur
-                  li
-                    a(href='#') Elit sed do eiusmod
-                    ul
-                      li
-                        a(href='#') Lorem ipsum
-                      li
-                        a(href='#') Conse adipisicing
-                      li
-                        a(href='#') Sit amet dolore
-                  li
-                    a(href='#') Incididunt ut labore
-                  li
-                    a(href='#') Et dolore magna
-              li
-                a(href='index-2.html') News
-              li
-                a(href='index-3.html') Gallery
-              li
-                a(href='index-4.html') Contact
-        -->
-        <!-- Swiper-->
         
         <div class="section swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="5000" data-simulate-touch="false">
           <div class="swiper-wrapper text-center">
@@ -156,28 +81,12 @@
                       <h2 data-caption-animate="fadeInUp" data-caption-delay="100">{{ $carousel->title }}</h2>
                       <hr>
                       <h4 class="lead" data-caption-animate="fadeInUp" data-caption-delay="250">{{ $carousel->description }}</h4>
-                      <div class="button-group" data-caption-animate="fadeInUp" data-caption-delay="450"><a class="button button-default button-lg" href="about-us.html">Read more</a><a class="button button-2 button-lg" href="#">Join us</a></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div> 
         @endforeach
-            <div class="swiper-slide context-dark" data-slide-bg="images/page-1_slide02.jpg">
-              <div class="swiper-slide-caption section-md">
-                <div class="container">
-                  <div class="row row-fix justify-content-center">
-                    <div class="col-md-11 col-lg-9 col-xxl-8">
-                      <h2 data-caption-animate="fadeInUp" data-caption-delay="100">What We Do</h2>
-                      <hr>
-                      <h4 class="lead" data-caption-animate="fadeInUp" data-caption-delay="250">We teach and care about your children every day.</h4>
-                      <div class="button-group" data-caption-animate="fadeInUp" data-caption-delay="450"><a class="button button-default button-lg" href="about-us.html">Read more</a><a class="button button-2 button-lg" href="#">Join us</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- Swiper Navigation-->
           <div class="swiper-navigation">
             <div class="swiper-button-prev fa-arrow-left"></div>
@@ -203,7 +112,7 @@
           <div class="cnt-block well-1 novi-background">
             <h2>{{ $b->title }}</h2>
             <hr>
-            <h4>{{ $b->body }}</h4><a class="button button-default" href="about-us.html">Read more</a>
+            <h4>{{ $b->body }}</h4>
           </div>
         </div>
       </section>
@@ -211,12 +120,12 @@
       @if($a %2 == 0)
         <section class="novi-section" data-preset='{"title":"Content box 2","category":"content box","reload":false,"id":"content-box-2"}'>
           <div class="bg-aside bg-aside-right center">
-            <div class="img"><img src="images/home-2-1025x664.jpg" alt="" width="1025" height="664"/>
+            <div class="img"><img src="{{ 'storage/'. $b->image }}" alt="" width="1025" height="664"/>
           </div>
           <div class="cnt-block well-1 novi-background">
-            <h2>Our values</h2>
+            <h2>{{ $b->title }}</h2>
             <hr>
-            <h4>Beauty, growth, development, and happiness are the foundation we use to guide our daily interactions and decision-making.</h4><a class="button button-default" href="about-us.html">Read more</a>
+            <h4>{{ $b->body }}</h4>
           </div>
         </div>
       </section>
@@ -285,52 +194,109 @@
           <h4>Read the latest news and updates from Happy Kids.</h4>
           <div class="row row-30 offset-custom-2">
               @foreach ($blogs as $blog)
-              <article class="col-sm-6 col-md-4"><a class="post" href="news/{{ $blog->id }}"><img src="{{ 'storage/'. $blog->image }}" alt="" width="370" height="453"/>
+              {{-- <article class="col-sm-6 col-md-4"><a class="post" href="news/{{ $blog->id }}"><img src="{{ 'storage/'. $blog->image }}" alt="" width="370" height="453"/>
+              <article class="col-sm-6 col-md-4"><a class="post" href=""><img src="{{ 'storage/'. $blog->image }}" alt="" width="370" height="453"/>
                 <div class="post_cnt">
                   <h3>{{ $blog->title }}</h3>
                   <time datetime="2015-04-14">{{ $blog->created_at }}</time>
-                </div></a></article>
-              @endforeach
-            {{-- <article class="col-sm-6 col-md-4"><a class="post" href="blog-post.html"><img src="images/home-7-370x453.jpg" alt="" width="370" height="453"/>
-                <div class="post_cnt">
-                  <h3>How Testing Buoyancy Can Build Babies’ Skills</h3>
-                  <time datetime="2015-04-14">April 10, 2018</time>
-                </div></a></article>
-            <article class="col-sm-6 col-md-4"><a class="post" href="blog-post.html"><img src="images/home-8-370x453.jpg" alt="" width="370" height="453"/>
-                <div class="post_cnt">
-                  <h3>Preschool Science Activities Make Kids Independent Thinkers</h3>
-                  <time datetime="2015-04-14">April 12, 2018</time>
-                </div></a></article>
-            <article class="col-sm-6 col-md-4"><a class="post" href="blog-post.html"><img src="images/home-9-370x453.jpg" alt="" width="370" height="453"/>
-                <div class="post_cnt">
-                  <h3>Sensory Counting Games for Kids Blend Fun and Education</h3>
-                  <time datetime="2015-04-14">April 14, 2018</time>
-                </div></a></article>
-            <article class="col-sm-6 col-md-4"><a class="post" href="blog-post.html"><img src="images/home-10-370x453.jpg" alt="" width="370" height="453"/>
-                <div class="post_cnt">
-                  <h3>The Road to Positive Parenting: Alternatives to "No"</h3>
-                  <time datetime="2015-04-14">April 16, 2018</time>
-                </div></a></article>
-            <article class="col-sm-6 col-md-4"><a class="post" href="blog-post.html"><img src="images/home-11-370x453.jpg" alt="" width="370" height="453"/>
-                <div class="post_cnt">
-                  <h3>Teach Good Decision-Making Skills and Say Goodbye to Power Struggles</h3>
-                  <time datetime="2015-04-14">April 18, 2018</time>
-                </div></a></article>
-            <article class="col-sm-6 col-md-4"><a class="post" href="blog-post.html"><img src="images/home-12-370x453.jpg" alt="" width="370" height="453"/>
-                <div class="post_cnt">
-                  <h3>Raise a Grateful Child and Watch Them Become a Caring Adult</h3>
-                  <time datetime="2015-04-14">April 20, 2018</time>
                 </div></a></article> --}}
-          </div><a class="button button-default" href="news.html">Read more</a>
+              @endforeach
+              <iframe width="853" height="480" src="https://www.youtube.com/embed/NtzftGb0EcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi natus amet tempore beatae, quas odio maxime necessitatibus eius atque quidem. Consequuntur impedit cumque tempora tempore voluptatum, neque eligendi eum rerum.</p>
         </div>
       </section>
-      <section>
-        <div class="google-map-container" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-zoom="14" data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png" data-styles="">
-          <div class="google-map"></div>
-          <ul class="google-map-markers">
-            <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
-          </ul>
+      {{-- Price --}}
+      <section id="price">
+        <div class="container price center">
+          <div class="cardPrice">
+            <div class="imgg">
+              <img src="{{ asset('images/logoNew.png') }}" alt="">
+            </div>
+             <div class="text">
+               <h3><b> BABY SPA</b></h3>
+               <ul>
+                 <li>
+                   Massage...........................................50 000 sum
+                 </li>
+                 <li>
+                  Massage...........................................150 000 sum
+                </li>
+                <li>
+                  Massage...........................................150 000 sum
+                </li>
+                <li>
+                  Massage...........................................150 000 sum
+                </li>
+                <li>
+                  Massage...........................................150 000 sum
+                </li>
+               </ul>
+               <h3><b> Baby Spa</b></h3>
+               <ul>
+                <li>
+                  Massage...........................................50 000 sum
+                </li>
+                <li>
+                 Massage...........................................150 000 sum
+                </li>
+                <li>
+                 Massage...........................................150 000 sum
+                </li>
+                <li>
+                 Massage...........................................150 000 sum
+                </li>
+                <li>
+                 Massage...........................................150 000 sum
+                </li>
+              </ul>
+             </div>
+          </div>
+          <div class="cardPrice">
+              <div class="imgg">
+                <img src="{{ asset('images/logoNew.png') }}" alt="">
+              </div>
+               <div class="text">
+                 <h3><b> BABY SPA</b></h3>
+                 <ul>
+                   <li>
+                     Massage...........................................50 000 sum
+                   </li>
+                   <li>
+                    Massage...........................................150 000 sum
+                  </li>
+                  <li>
+                    Massage...........................................150 000 sum
+                  </li>
+                  <li>
+                    Massage...........................................150 000 sum
+                  </li>
+                  <li>
+                    Massage...........................................150 000 sum
+                  </li>
+                 </ul>
+                 <h3><b> Baby Spa</b></h3>
+                 <ul>
+                  <li>
+                    Massage...........................................50 000 sum
+                  </li>
+                  <li>
+                   Massage...........................................150 000 sum
+                  </li>
+                  <li>
+                   Massage...........................................150 000 sum
+                  </li>
+                  <li>
+                   Massage...........................................150 000 sum
+                  </li>
+                  <li>
+                   Massage...........................................150 000 sum
+                  </li>
+                </ul>
+               </div>
+            </div>
         </div>
+      </section>
+      <section id="map" style="height:500px; width:100%;">
       </section>
       <!-- Page Footer-->
       <footer class="bg-default novi-background bg-cover">
@@ -344,31 +310,31 @@
               <div class="col-sm-6">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-name">Name</label>
-                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
+                  <input class="form-input" id="contact-name" type="text" name="name" required data-constraints="@Required">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-phone">Phone</label>
-                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
+                  <input class="form-input" id="contact-phone" type="text" name="phone" required data-constraints="@Required @PhoneNumber">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-email">E-Mail</label>
-                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+                  <input class="form-input" id="contact-email" type="email" name="email" required data-constraints="@Required @Email">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-address">Address</label>
-                  <input class="form-input" id="contact-address" type="text" name="address">
+                  <input class="form-input" id="contact-address" type="text" required name="address">
                 </div>
               </div>
               <div class="col-sm-12">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-message">Message</label>
-                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                  <textarea class="form-input" id="contact-message" name="message" required data-constraints="@Required"></textarea>
                 </div>
               </div>
             </div>
@@ -402,5 +368,40 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-  </body>
+    <script type="text/javascript">
+    $(document).ready(() => {
+      // When the window has finished loading create our google map below
+      google.maps.event.addDomListener(window, 'load', init);
+      
+      function init() {
+        var mapOptions = {
+          zoom: 11,
+          
+          // The latitude and longitude to center the map (always required)
+          center: new google.maps.LatLng(40.6700, -73.9400), // New York
+          
+          // How you would like to style the map. 
+          // This is where you would paste any style found on Snazzy Maps.
+          styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+          };
+          
+          // Get the HTML DOM element that will contain your map 
+          // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+            
+            // Create the Google Map using our element and options defined above
+          var map = new google.maps.Map(mapElement, mapOptions);
+          
+          // Let's also add a marker while we're at it
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6700, -73.9400),
+            map: map,
+            title: 'Snazzy!'
+          });
+        }
+      })
+      </script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7jdJhQhRNFFj2za7fz3727EkodXzAIVs"></script>
+</body>
 </html>

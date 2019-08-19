@@ -13,13 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
 
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', 'LandingController@index');
+$locale = App::getLocale();
+Route::get('/{lang?}', 'LandingController@index', function($locale)  {
+    App::setLocale($locale);
+});
 Route::post('/commit', 'LandingController@store');
 Route::get('/news/{id}', 'LandingController@show');
 Route::group(['prefix' => 'admin'], function () {

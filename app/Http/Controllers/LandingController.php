@@ -7,10 +7,13 @@ use App\Comment;
 use App\Post;
 use App\Carousel;
 use App\Body;
+use App;
 use App\Gallery;
 class LandingController extends Controller
 {
-    public function index() {
+    public function index($locale) {
+        App::setlocale($locale);
+        session() -> put('locale', $locale);
         $blogs = Post::all();
         $carouselImages = Carousel::all();
         $body = Body::all();
