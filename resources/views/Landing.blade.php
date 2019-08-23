@@ -27,6 +27,7 @@
         <!-- Page Header-->
         <header class="section page-header rd-navbar-absolute">
           <!-- RD Navbar-->
+          <div id="navbar"></div>
           <div class="rd-navbar-wrap">
             <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
               <div class="rd-navbar-main-outer">
@@ -44,16 +45,16 @@
                       <!-- RD Navbar Nav-->
                       @php $locale = session()->get('locale'); @endphp
                       <ul class="rd-navbar-nav">
-                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#map">Home</a>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#navbar">Home</a>
                         </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="#price">About us</a>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="#about">About us</a>
                         </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="news.html">News</a>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url('/gallery') }}">Gallery</a>
                         </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="#price">Price</a>
                         </li>
                         
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact us</a>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="#footer">Contact us</a>
                         </li>
                         <li class="rd-nav-item"><a class="rd-nav-link" style="font-size:14px" href="/ru">RU</a>
                           <!-- RD Navbar Dropdown-->
@@ -73,7 +74,8 @@
         <div class="section swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="5000" data-simulate-touch="false">
           <div class="swiper-wrapper text-center">
         @foreach ($carouselImages as $carousel)
-            <div class="swiper-slide context-dark" data-slide-bg="{{ asset('storage/'. $carousel->image) }}" >
+            {{-- <div class="swiper-slide context-dark" data-slide-bg="{{ asset('storage'. '/'. $carousel->image) }}" > --}}
+            <div class="swiper-slide context-dark" data-slide-bg="{{ asset('images/page-1_slide02.jpg') }}" >
               <div class="swiper-slide-caption section-md">
                 <div class="container">
                   <div class="row row-fix justify-content-center">
@@ -105,6 +107,7 @@
       @foreach ($body as $b)
       <?php ++$a ?>
       @if($a%2 != 0)
+      <div id="about"></div>
       <section class="novi-section">
           <div class="bg-aside bg-aside-left center">
             <div class="img"><img src="{{ 'storage/'. $b->image }}" alt="" width="1025" height="664"/>
@@ -200,8 +203,8 @@
                   <h3>{{ $blog->title }}</h3>
                   <time datetime="2015-04-14">{{ $blog->created_at }}</time>
                 </div></a></article> --}}
+                <iframe width="853" class="col-sm-6 col-md-4" height="480" src="https://www.youtube.com/embed/NtzftGb0EcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               @endforeach
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/NtzftGb0EcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi natus amet tempore beatae, quas odio maxime necessitatibus eius atque quidem. Consequuntur impedit cumque tempora tempore voluptatum, neque eligendi eum rerum.</p>
         </div>
       </section>
@@ -212,96 +215,96 @@
             <div class="imgg">
               <img src="{{ asset('images/logoNew.png') }}" alt="">
             </div>
-             <div class="text">
-               <h3><b> BABY SPA</b></h3>
-               <ul>
-                 <li>
-                   Massage...........................................50 000 sum
-                 </li>
-                 <li>
-                  Massage...........................................150 000 sum
-                </li>
-                <li>
-                  Massage...........................................150 000 sum
-                </li>
-                <li>
-                  Massage...........................................150 000 sum
-                </li>
-                <li>
-                  Massage...........................................150 000 sum
-                </li>
-               </ul>
-               <h3><b> Baby Spa</b></h3>
-               <ul>
-                <li>
-                  Massage...........................................50 000 sum
-                </li>
-                <li>
-                 Massage...........................................150 000 sum
-                </li>
-                <li>
-                 Massage...........................................150 000 sum
-                </li>
-                <li>
-                 Massage...........................................150 000 sum
-                </li>
-                <li>
-                 Massage...........................................150 000 sum
-                </li>
-              </ul>
-             </div>
-          </div>
-          <div class="cardPrice">
+            <div class="text">
+              <h3><b> Baby SPA</b></h3>
+                 <ul>
+                   <li>
+                     Массаж общий ........................................... 50 000 сум
+                    </li>
+                   <li>
+                     Baby Relax (2 мес.-1,5 г.) ............................... 150 000 сум
+                    </li>
+                    <li>
+                      Утенок Кря-Кря (1-3 г.)................................ 150 000 сум
+                    </li>
+                    <li>
+                      Веселая панда (1-3 г.) ................................ 150 000 сум
+                    </li>
+                  <li>
+                    McQueen (1-3 г.) ........................................... 150 000 сум
+                  </li>
+                 </ul>
+                 <h3><b> Школа будущих и молодых мамочек</b></h3>
+                 <ul>
+                   <li>
+                     В ожидании Чуда ..................................... 1 000 000 сум
+                  </li>
+                  <li>
+                   Я скоро Мама ........................................... 500 000 сум
+                  </li>
+                  <li>
+                    Я мамочка ........................................... 600 000 сум
+                  </li>
+                  <li>
+                    Pregnancy fitness........................................... 400 000 сум
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="cardPrice">
               <div class="imgg">
                 <img src="{{ asset('images/logoNew.png') }}" alt="">
               </div>
                <div class="text">
-                 <h3><b> BABY SPA</b></h3>
+                 <h3><b> Baby Growth(Русс/Англ)</b></h3>
                  <ul>
                    <li>
-                     Massage...........................................50 000 sum
+                     Группа от 0-6 мес. .......................... 350 000 сум
                    </li>
                    <li>
-                    Massage...........................................150 000 sum
+                    Группа от 6-12 мес. .......................... 350 000 сум
                   </li>
                   <li>
-                    Massage...........................................150 000 sum
+                    Разовое занятие........................... 100 000 сум
                   </li>
                   <li>
-                    Massage...........................................150 000 sum
+                    Группа от 1-2 лет. ........................... 400 000 сум
                   </li>
                   <li>
-                    Massage...........................................150 000 sum
+                    Группа от 2-3 лет. ........................... 400 000 сум
+                  </li>
+                  <li>
+                    Разовое занятие ........................... 70 000 сум
                   </li>
                  </ul>
-                 <h3><b> Baby Spa</b></h3>
+                 <h3><b> Baby Contact</b></h3>
                  <ul>
                   <li>
-                    Massage...........................................50 000 sum
+                    Фитнес <<Мама и малыш>> .............. 400 000 сум
                   </li>
                   <li>
-                   Massage...........................................150 000 sum
+                    Разовое занятие ............................. 70 000 sum
                   </li>
-                  <li>
-                   Massage...........................................150 000 sum
-                  </li>
-                  <li>
-                   Massage...........................................150 000 sum
-                  </li>
-                  <li>
-                   Massage...........................................150 000 sum
-                  </li>
+                </ul>
+                <h3><b>Baby Photographer</b></h3>
+                <ul>
+                  <li>Newborn ........................................... 500 000 сум</li>
+                  <li>12 месяцев ..................................... 400 000 сум</li>
+                  <li>День рождения ..................................400 000 сум</li>
                 </ul>
                </div>
             </div>
-        </div>
+          </div>
       </section>
       <section id="map" style="height:500px; width:100%;">
       </section>
       <!-- Page Footer-->
+      <div id="footer">
+
+      
       <footer class="bg-default novi-background bg-cover">
         <div class="container center">
-          <h2>Contact us</h2>
+          <h2>Contact us</h2> 
           <hr>
           <h4>Feel free to send us a message or ask a question.</h4>
           {{-- <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('/commit') }}"> --}}
@@ -365,10 +368,35 @@
         </div>
       </footer>
     </div>
+    </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <script type="text/javascript">
+     $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
     $(document).ready(() => {
       // When the window has finished loading create our google map below
       google.maps.event.addDomListener(window, 'load', init);

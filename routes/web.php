@@ -22,6 +22,7 @@ $locale = App::getLocale();
 Route::get('/', 'LandingController@index');
 Route::post('/commit', 'LandingController@store');
 Route::get('/news/{id}', 'LandingController@show');
+Route::get('/gallery', 'LandingController@gallery');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

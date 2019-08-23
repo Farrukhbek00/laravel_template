@@ -35,4 +35,7 @@ class LandingController extends Controller
         $data->save();
         return redirect('/');
     }
+    public function gallery() {
+        return view('gallery');
+    }
 }
